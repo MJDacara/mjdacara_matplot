@@ -1,0 +1,35 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+#plot 1:
+x = np.array(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'])
+y = np.array([1, 7, 3, 8, 7, 5])
+
+plt.subplot(2, 1, 1)
+
+font1 = {'family':'sans-serif','color':'black','size':15}
+font2 = {'family':'sans-serif','color':'black','size':10}
+plt.title("Pirate Status", fontdict = font1)
+plt.ylabel("Treasures Found", fontdict = font2)
+plt.xlabel("Months", fontdict = font2)
+
+plt.plot(x,y, 'X-.r', ms=10)
+plt.grid(axis = 'y')
+
+
+#plot 2:
+x = np.random.normal(70, 30, 300)
+
+plt.subplot(2, 1, 2)
+
+font1 = {'family':'sans-serif','color':'black','size':15}
+font2 = {'family':'sans-serif','color':'black','size':10}
+plt.title("Avg Gold per km travlled", fontdict = font1)
+plt.ylabel("Gold", fontdict = font2)
+plt.xlabel("KM Travelled", fontdict = font2)
+plt.hist(x, color='#8B8000')
+
+plt.subplots_adjust(hspace=0.75)
+plt.show()
